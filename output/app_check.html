@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Customs — App Check</title>
+    <style>
+      :root {
+        --yale-blue: #00356b;
+        --yale-blue-mid: #286dc0;
+        --accent-teal: #0b7ea8;
+        --wash: #f3f7fc;
+        --border: #d8e4f2;
+        --ink: #16202c;
+        --ink-soft: #52637a;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--wash);
+        color: var(--ink);
+        font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+      }
+      header {
+        background: var(--yale-blue);
+        color: #fff;
+        padding: 2rem 1.5rem;
+        font-family: Georgia, "Times New Roman", serif;
+      }
+      header .inner { max-width: 960px; margin: 0 auto; }
+      header h1 { margin: 0 0 0.25rem; font-size: 1.9rem; }
+      header p { margin: 0; color: #cfe2fa; font-family: "Segoe UI", sans-serif; }
+      main { max-width: 960px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+      .check {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0, 53, 107, 0.07);
+        margin-bottom: 2.5rem;
+      }
+      .check-head { padding: 1.1rem 1.4rem 0.4rem; }
+      .check-num {
+        display: inline-block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--accent-teal);
+      }
+      .check h2 { margin: 0.1rem 0 0; font-size: 1.25rem; color: var(--yale-blue); }
+      .shot {
+        display: block;
+        width: 100%;
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        margin: 0.9rem 0 0;
+        background: var(--wash);
+      }
+      figcaption {
+        padding: 0.9rem 1.4rem 1.3rem;
+        color: var(--ink-soft);
+        font-size: 0.95rem;
+      }
+      figcaption b { color: var(--ink); font-weight: 700; }
+      .meta { max-width: 960px; margin: 0 auto; padding: 0 1.5rem 3rem; color: var(--ink-soft); font-size: 0.85rem; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Campus Customs — App Check</h1>
+        <p>Three features of the shop, captured from the running app.</p>
+      </div>
+    </header>
+
+    <main>
+      <figure class="check">
+        <div class="check-head">
+          <span class="check-num">Check 1</span>
+          <h2>Chat checking the inventory of an item</h2>
+        </div>
+        <img
+          class="shot"
+          src="app_check_images/01-chat-inventory.jpg"
+          alt="The chat assistant listing live per-size stock for the Basic Hoodie Big Yale."
+        />
+        <figcaption>
+          The shopper asks <b>&ldquo;Is the Basic Hoodie Big Yale in stock, and which
+          sizes?&rdquo;</b> The assistant calls the catalogue&rsquo;s stock tool and reports
+          the live count for every size &mdash; XS&nbsp;(15), S&nbsp;(5), M&nbsp;(5),
+          L&nbsp;(8), XL&nbsp;(2), XXL&nbsp;(25) &mdash; and flags XL as the lowest.
+          The numbers are read from the database for that turn, never invented.
+        </figcaption>
+      </figure>
+
+      <figure class="check">
+        <div class="check-head">
+          <span class="check-num">Check 2</span>
+          <h2>Dynamic search-result cards</h2>
+        </div>
+        <img
+          class="shot"
+          src="app_check_images/02-dynamic-cards.jpg"
+          alt="Four product cards rendered on the page after asking the assistant for crewnecks."
+        />
+        <figcaption>
+          Asking <b>&ldquo;Show me some crewneck sweatshirts&rdquo;</b> makes the agent
+          search the catalogue and the website renders the matches as real product
+          cards &mdash; image, category, name, price and a short description &mdash; under
+          the nav. Each card links to that item&rsquo;s page. The cards are built from the
+          database out of the ids the agent returns, so prices and photos are always real.
+        </figcaption>
+      </figure>
+
+      <figure class="check">
+        <div class="check-head">
+          <span class="check-num">Check 3</span>
+          <h2>Sort control on Products</h2>
+        </div>
+        <img
+          class="shot"
+          src="app_check_images/03-sort-control.jpg"
+          alt="The Products page with the sort dropdown set to Price: low to high, cheapest items first."
+        />
+        <figcaption>
+          The Products toolbar has a <b>Sort</b> control &mdash; here set to
+          <b>Price: low to high</b>, so the $32 tees lead the grid. Sorting happens
+          instantly on the client over the already-loaded catalogue, with options for
+          price (both directions) and name A&ndash;Z.
+        </figcaption>
+      </figure>
+    </main>
+
+    <p class="meta">
+      Captured from the live app at localhost:5173 (frontend) and localhost:8000
+      (backend). Images are in <code>app_check_images/</code>.
+    </p>
+  </body>
+</html>

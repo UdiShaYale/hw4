@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+node_modules/
+dist/
+.env
+
+# Course-provided catalogue data (campus_customs.db + product photos).
+# Not redistributed here; see the Catalogue data note in the README.
+data/
